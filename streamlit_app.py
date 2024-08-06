@@ -45,6 +45,10 @@ for each_fruit in ingredients_list:
 #st.write(ingredients_list)
 #st.write(ingredients_string)
 
+import requests
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+st.text(fruityvice_response)
+
 if ingredients_list !=' ':
     my_insert_stmt = """ insert into smoothies.public.orders(ingredients,name_on_order)
             values ('""" + ingredients_string + """','"""+ name_on_order +"""')"""
