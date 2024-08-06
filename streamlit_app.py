@@ -47,7 +47,7 @@ for each_fruit in ingredients_list:
 
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-st.text(fruityvice_response)
+st.text(fruityvice_response.json())
 
 if ingredients_list !=' ':
     my_insert_stmt = """ insert into smoothies.public.orders(ingredients,name_on_order)
